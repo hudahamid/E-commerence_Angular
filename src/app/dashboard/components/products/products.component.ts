@@ -6,18 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  
   items: any[] = [
-    { num:1,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:1,name: 'Jane Smith', phone: '987-654-3210', email: 'jane@example.com', status: false },
-    { num:1,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:4,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:4,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:4,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:4,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:4,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:4,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:4,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
-    { num:4,name: 'Sima Sleman', phone: '123-456-7890', email: 'john@example.com', status: true },
+    { num:1,name: 'Heart & slogan', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'in stock14',sale :'20.4$' },
+    { num:1,name: 'Heart & slogan', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'out of stock(0)',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'in stock14',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'out of stock(0)',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'in stock14',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'out of stock(0)',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'in stock14',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'out of stock(0)',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'out of stock(0)',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'in stock14',sale :'20.4$' },
+    { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'out of stock(0)',sale :'20.4$' },
     // Add more items as needed
   ];
   constructor() { }
