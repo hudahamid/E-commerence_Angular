@@ -1,15 +1,15 @@
-<p>products works!</p>
-
-
-<table>
+<button >+ Products</button>
+  <table>
     <thead>
       <tr>
         <th>#</th>
         <th>Name</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Status</th>
-        <th></th>
+        <th>Image</th>
+        <th>Brands</th>
+        <th>SProduct code</th>
+        <th>Categories</th>
+        <th>Stock Over view</th>
+        <th>SalesPrice</th>
       </tr>
     </thead>
     <tbody>
@@ -17,17 +17,19 @@
         <tr [ngClass]="i % 2 === 0 ? 'black-row' : 'white-row'">
           <td>{{ item.num }}</td>
            <td>{{ item.name }}</td>
-          <td>{{ item.phone }}</td>
-          <td>{{ item.email }}</td>
-          <td>
-            <span [ngClass]="item.status ? 'status-circle active' : 'status-circle inactive'"></span>
-            {{ item.status ? 'Active' : 'Inactive' }}
-          </td>
+          <td>{{ item.Image }}</td>
+          <td>{{ item.Brands }}</td>
+          <td>{{ item.Productcode}}</td>
+          <td>{{ item.categories }}</td>
+          <td>{{ item.stack }}</td>
+          <td>{{ item.sale }}</td>
+          
           <td></td>
         </tr>
       </ng-container>
     </tbody>
   </table>
+
   
 
 <div class="modal">
