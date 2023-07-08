@@ -1,5 +1,35 @@
 <p>products works!</p>
 
+
+<table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of items; let i = index">
+        <tr [ngClass]="i % 2 === 0 ? 'black-row' : 'white-row'">
+          <td>{{ item.num }}</td>
+           <td>{{ item.name }}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.email }}</td>
+          <td>
+            <span [ngClass]="item.status ? 'status-circle active' : 'status-circle inactive'"></span>
+            {{ item.status ? 'Active' : 'Inactive' }}
+          </td>
+          <td></td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  
+
 <div class="modal">
     <div class="modal-content">
       <h3 class="modal-title"> product detail </h3>
