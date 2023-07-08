@@ -1,1 +1,81 @@
-<p>info works!</p>
+ 
+
+<div class="modal">
+    <div class="modal-content">
+      <h3 class="modal-title"> show orders</h3>
+  
+      
+      
+  
+      
+  
+      <div class="container">
+        <div class="left-cat">
+            <div class="category">
+            <h5>Categories :</h5>
+            <p>T-shirt</p>
+            </div>
+            
+            <div class="category">
+                <h5>Average price :</h5>
+                <p>230,000$</p>
+                </div>
+    
+               
+                </div>
+
+
+            <div class="right-cat">
+                    <div class="category">
+                    <h5>Brands:</h5>
+                    <p>zara</p>
+                </div>
+                   
+                     <div class="category">
+                        <h5>Bulk Sale:</h5>
+                        <p>230$</p>
+                        </div>
+            
+                        
+                        </div>
+
+
+     </div>
+     <hr>
+     <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>price</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of items; let i = index">
+            <tr [ngClass]="i % 2 === 0 ? 'black-row' : 'white-row'">
+              <td>{{ item.num }}</td>
+               <td>{{ item.name }}</td>
+              <td>{{ item.Image }}</td>
+              <td>{{ item.Brands }}</td>
+              <td>{{ item.Productcode}}</td>
+              <td>{{ item.categories }}</td>
+             
+              
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    
+      
+  
+      <div class="button-row">
+        <button >Delete</button>
+        <button > Edit</button>
+      </div>
+    </div>
+  </div>
+  
