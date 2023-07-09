@@ -7,29 +7,54 @@
     <input class="input1" type="text"  placeholder="    scan Barcode ">
     </div>
 
-    <div class="container">
-        <div class="left-cat">
-            <img width="145" src="assets/Capture2.PNG" alt="My Image">
-                </div>
+<div class="container">
+    <div class="left-cat">
+        <img width="145" src="assets/Capture2.PNG" alt="My Image">
+    </div>
 
 
-            <div class="right-cat">
-                    <div class="category">
-                    <h4><b>Heart & Slogan</b></h4>
-                </div>
-                   
-                     <div class="category">
-                        <h5>Bulk Sale:</h5>
-                        <p>230$</p>
-                        </div>
+    <div class="right-cat">
+        <div class="category">
+        <h4><b>Heart & Slogan</b></h4>
+        </div>
             
-                        <div class="category">
-                            <h5>Quantity :</h5>
-                            <p>12item</p>
-                            </div> 
-                        </div>
+        <div class="category">
+            <h5>Bulk Sale:</h5>
+            <p>230$</p>
+            </div>
 
+        <div class="category">
+                <h5>Quantity :</h5>
+                <p>12item</p>
+        </div> 
+        
+    </div>
+</div>
 
-     </div>
+<div class="calculator">
+    <div class="row">
+      <div class="button" *ngFor="let num of [1, 2, 3]" (click)="appendToInput(num)">{{ num }}</div>
+    </div>
+    <div class="row">
+      <div class="button" *ngFor="let num of [4, 5, 6]" (click)="appendToInput(num)">{{ num }}</div>
+    </div>
+    <div class="row">
+      <div class="button" *ngFor="let num of [7, 8, 9]" (click)="appendToInput(num)">{{ num }}</div>
+    </div>
+    <!-- <div class="row">
+      <div class="button" *ngFor="let item of ['0', 'AC', '+']" (click)="appendToInput(item)">{{ item }}</div>
+    </div> -->
+    <div class="row">
+        <div class="button" *ngFor="let item of ['0', 'AC', '+']" (click)="handleButtonClick(item)">{{ item }}</div>
+      </div>
+    <div class="row">
+        <input class="calculation" type="text" [(ngModel)]="inputValue" readonly>
+    </div>
+    <div class="row">
+        <button class="add-button" (click)="calculateResult()">Add</button>
+    </div>
+  </div>
+  
+  
     
   
