@@ -1,33 +1,46 @@
-
-
 <div class="carousel-container">
- 
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Status</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let item of items; let i = index">
-        <tr [ngClass]="i % 2 === 0 ? 'black-row' : 'white-row'">
-          <td>{{ item.num }}</td>
-           <td>{{ item.name }}</td>
-          <td>{{ item.phone }}</td>
-          <td>{{ item.email }}</td>
-          <td>
-            <span [ngClass]="item.status ? 'status-circle active' : 'status-circle inactive'"></span>
-            {{ item.status ? 'Active' : 'Inactive' }}
-          </td>
-          <td></td>
-        </tr>
-      </ng-container>
-    </tbody>
-  </table>
+  <div class="carousel">
+    <div class="carousel-slide" *ngFor="let item of tableItems; let i = index" [class.active]="i === activeSlideIndex">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of tableItems; let j = index">
+            <tr [class.white-row]="j % 2 === 0" [class.gray-row]="j % 2 !== 0">
+              <td>{{ item.num }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.phone }}</td>
+              <td>
+                <span class="status-circle" [ngClass]="{ 'status-active': item.status, 'status-inactive': !item.status }"></span>
+                <span [ngClass]="{ 'status-active': item.status, 'status-inactive': !item.status }">{{ item.status ? 'Active' : 'Inactive' }}</span>
+              </td>
+              <td>
+                <div class="dropdown">
+                  <button (click)="toggleDropdown(item.num)">
+                    <i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <div class="dropdown-content" [ngClass]="{ 'show': dropdownIndex === item.num }">
+                    <button (click)="editItem(item)">Edit</button>
+                    <button (click)="deleteItem(item)">Delete</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="carousel-pagination">
+    <div class="carousel-circle" *ngFor="let item of tableItems; let i = index" [class.active]="i === activeSlideIndex" (click)="changeSlide(i)"></div>
+  </div>
 </div>
-  
