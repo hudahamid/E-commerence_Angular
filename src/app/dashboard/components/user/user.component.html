@@ -1,7 +1,7 @@
-<div class="carousel-container">
-  <div class="carousel">
-    <div class="carousel-slide" *ngFor="let item of tableItems; let i = index" [class.active]="i === activeSlideIndex">
-      <table>
+<div class="carousel-container h-[80%] bg-white w-[78%] mx-24 justify-center my-16">
+  <div class="carousel ">
+    <div class="carousel-slide " *ngFor="let item of tableItems; let i = index" [class.active]="i === activeSlideIndex">
+      <table class="w-[96%]">
         <thead>
           <tr>
             <th>#</th>
@@ -24,6 +24,10 @@
                 <span [ngClass]="{ 'status-active': item.status, 'status-inactive': !item.status }">{{ item.status ? 'Active' : 'Inactive' }}</span>
               </td>
               <td>
+                <span [ngClass]="item.status ? 'status-circle active' : 'status-circle inactive'"></span>
+                {{ item.status ? 'Active' : 'Inactive' }}
+              </td>
+              <td>
                 <div class="dropdown">
                   <button (click)="toggleDropdown(item.num)">
                     <i class="fas fa-ellipsis-v"></i>
@@ -40,7 +44,14 @@
       </table>
     </div>
   </div>
+
+  
   <div class="carousel-pagination">
+    <div class="carousel-icon bigger-icon">&lt;</div>
     <div class="carousel-circle" *ngFor="let item of tableItems; let i = index" [class.active]="i === activeSlideIndex" (click)="changeSlide(i)"></div>
+    <div class="carousel-icon bigger-icon  ">&gt;</div>
   </div>
+  
+  
+
 </div>

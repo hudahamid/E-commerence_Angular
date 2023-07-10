@@ -33,6 +33,9 @@ export class UserComponent implements OnInit {
     { num: 4, name: 'Emily Johnson', phone: '888-999-0000', email: 'emily@example.com', status: true },
     { num: 5, name: 'David Brown', phone: '111-222-3333', email: 'david@example.com', status: false },
     { num: 6, name: 'Emma Wilson', phone: '444-555-6666', email: 'emma@example.com', status: true },
+    { num: 3, name: 'John Doe', phone: '555-123-4567', email: 'john.doe@example.com', status: true },
+    { num: 4, name: 'Emily Johnson', phone: '888-999-0000', email: 'emily@example.com', status: true },
+   
   ];
 
   activeSlideIndex: number = 0;
@@ -41,6 +44,14 @@ export class UserComponent implements OnInit {
   changeSlide(index: number): void {
     this.activeSlideIndex = index;
   }
+
+  // toggleDropdown(index: number): void {
+  //   if (this.dropdownIndex === index) {
+  //     this.dropdownIndex = null;
+  //   } else {
+  //     this.dropdownIndex = index;
+  //   }
+  // }
 
   toggleDropdown(index: number): void {
     if (this.dropdownIndex === index) {
