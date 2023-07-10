@@ -82,10 +82,56 @@ p2 {
   font-size: 18px;
   font-weight: bold;
 }
-.add-button {
+.add-button{
   padding: 10px 83px;
   // background-color: #4caf50;
   color: white;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.add-button2 {
+  padding: 10px 100px;
+  // background-color: #4caf50;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: medium;
+}
+
+
+//-- ticket
+#card {
+  // width: 300px;
+  // background: #cccccc;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#line {
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px dashed gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+#line::before, #line::after {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background: white;
+  content: "";
+  color: white;
+  display: inline-block;
+  margin-top: -9px;
+}
+
+#line::before {
+  margin-left: -20px;
+}
+
+#line::after {
+  margin-right: -20px;
 }
