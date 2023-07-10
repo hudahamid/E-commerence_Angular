@@ -21,6 +21,17 @@ mat-sidenav-container {
         transition: color .3s ease;
         
       }
+      .menu-item2 {
+        margin-left: 18px;
+       font-size: 10px;
+        display: flex;  
+        align-items: center;
+        // height: 0.2rem ;
+         
+        text-decoration: none;
+        transition: color .3s ease;
+        
+      }
 
       .chevron-button {
         transition: 300ms ease-in-out;

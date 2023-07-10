@@ -1,62 +1,154 @@
+<div class="main flex">
+<div class="cont1 w-3/4 bg-gray-200 h-screen pl-5 pr-28 py-7">
 <div class="dashboardHead">
-    <p>Mango clothes</p>
-    <button >+ Customer</button>
+  <p>Mango clothes</p>
+  <button [routerLink]="'customers'">+ Customer</button>
+</div>
+
+<div class="flex px-6 justify-between mb-8">
+  <div class="input-row ">
+  <input class="inputt px-24 py-2" type="text"  placeholder="    scan Barcode ">
+  </div>
+  <div class="input-row">
+    <input class="input1" type="text"  placeholder="    select customer type">
+    </div>
+  </div>
+
+<div class="container  ">
+  <div class="left-cat mr-3 ml-2 py-3">
+      <img width="180" height="400" src="assets/Capture2.PNG" alt="My Image">
+  </div>
+
+
+  <div class="right-cat">
+      <div class="category">
+      <h4><b>Heart & Slogan</b></h4>
+      </div>
+          
+      <div class="category">
+          <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel </h5>
+          
+          </div>
+
+      <div class="category">
+             
+              <p class=" p2 text-pink-500"><b>12.02/</b></p>
+              <p>items</p>
+              
+      </div> 
+      
+  </div>
+</div>
+
+<div class="calculator mt-7 ">
+  <div class="row">
+    <div class="button px-6 py-5 font-semibold" *ngFor="let num of [1, 2, 3]" (click)="appendToInput(num)">{{ num }}</div>
+  </div>
+  <div class="row">
+    <div class="button px-6 py-5 font-semibold" *ngFor="let num of [4, 5, 6]" (click)="appendToInput(num)">{{ num }}</div>
+  </div>
+  <div class="row">
+    <div class="button px-6 py-5 font-semibold" *ngFor="let num of [7, 8, 9]" (click)="appendToInput(num)">{{ num }}</div>
+  </div>
+  <!-- <div class="row">
+    <div class="button" *ngFor="let item of ['0', 'AC', '+']" (click)="appendToInput(item)">{{ item }}</div>
+  </div> -->
+  <div class="row">
+      <div class="button px-6 py-5 font-semibold" *ngFor="let item of ['0', 'AC', '+']" (click)="handleButtonClick(item)">{{ item }}</div>
+    </div>
+  <div class="row">
+      <input class="calculation px-5 py-1" type="text" [(ngModel)]="inputValue" readonly>
+  </div>
+  <div class="row">
+      <button class="add-button" (click)="calculateResult()">Add</button>
+  </div>
+</div>
+
+</div>
+<!-- <h1 class="text-3xl font-bold underline bg-red-300">
+  Hello world!
+</h1> -->
+<div class="con px-6 bg-white w-96 float-right justify-end items-end ">
+  <div><h2 class="text-blue-400 py-1 px-2">Current order</h2></div>
+
+  <div class="containerR flex h-20 w-90  ">
+  <div class="left-cat mr-3">
+      <img width="60" src="assets/Capture2.PNG" alt="My Image">
+  </div>
+
+  <div class="cat">
+      <div class="category">
+      <h4><b>Heart & Slogan Graphic Tee </b></h4>
+      
+      </div>
+          
+    <div class="category2 flex justify-between"> 
+      <p class="text-pink-500 "><b>12.02/</b></p>
+      <p class="pl-9">0 items</p>
+    </div> 
+      
+  </div>
+</div>
+<div class="containerR flex h-20 w-90  ">
+  <div class="left-cat mr-3">
+      <img width="60" src="assets/Capture2.PNG" alt="My Image">
+  </div>
+
+  <div class="cat">
+      <div class="category">
+      <h4><b>Heart & Slogan  Graphic Tee </b></h4>
+      </div>
+          
+    <div class="category2 flex justify-between"> 
+      <p class="text-pink-500 "><b>12.02/</b></p>
+      <p class="pl-9">0 items</p>
+    </div> 
+      
+  </div>
+</div>
+<div class="containerR flex h-20 w-90  ">
+  <div class="left-cat mr-3">
+      <img width="60" src="assets/Capture2.PNG" alt="My Image">
+  </div>
+
+  <div class="cat">
+      <div class="category">
+      <h4><b>Heart & Slogan Graphic Tee </b></h4>
+      </div>
+          
+    <div class="category2 flex justify-between"> 
+      <p class="text-pink-500 "><b>12.02/</b></p>
+      <p class="pl-9">0 items</p>
+    </div> 
+      
+  </div>
+  
+</div>
+
+<div class="containerR flex h-20 w-90  ">
+  <div class="left-cat mr-3">
+      <img width="60" src="assets/Capture2.PNG" alt="My Image">
+  </div>
+
+  <div class="cat">
+      <div class="category">
+      <h4><b>Heart & Slogan Graphic Tee </b></h4>
+      </div>
+          
+    <div class="category2 flex justify-between"> 
+      <p class="text-pink-500 "><b>12.02/</b></p>
+      <p class="pl-9">0 items</p>
+    </div> 
+      
+  </div>  
 </div>
 
 <div class="input-row">
-    <input class="input1" type="text"  placeholder="    scan Barcode ">
-    </div>
+  <input class="input px-7 py-1 mt-5 ml-4" type="text"  placeholder="  Discount amount">
+  </div>
 
-<div class="container">
-    <div class="left-cat">
-        <img width="145" src="assets/Capture2.PNG" alt="My Image">
-    </div>
-
-
-    <div class="right-cat">
-        <div class="category">
-        <h4><b>Heart & Slogan</b></h4>
-        </div>
-            
-        <div class="category">
-            <h5>Bulk Sale:</h5>
-            <p>230$</p>
-            </div>
-
-        <div class="category">
-                <h5>Quantity :</h5>
-                <p>12item</p>
-        </div> 
-        
-    </div>
+</div>
 </div>
 
-<div class="calculator">
-    <div class="row">
-      <div class="button" *ngFor="let num of [1, 2, 3]" (click)="appendToInput(num)">{{ num }}</div>
-    </div>
-    <div class="row">
-      <div class="button" *ngFor="let num of [4, 5, 6]" (click)="appendToInput(num)">{{ num }}</div>
-    </div>
-    <div class="row">
-      <div class="button" *ngFor="let num of [7, 8, 9]" (click)="appendToInput(num)">{{ num }}</div>
-    </div>
-    <!-- <div class="row">
-      <div class="button" *ngFor="let item of ['0', 'AC', '+']" (click)="appendToInput(item)">{{ item }}</div>
-    </div> -->
-    <div class="row">
-        <div class="button" *ngFor="let item of ['0', 'AC', '+']" (click)="handleButtonClick(item)">{{ item }}</div>
-      </div>
-    <div class="row">
-        <input class="calculation" type="text" [(ngModel)]="inputValue" readonly>
-    </div>
-    <div class="row">
-        <button class="add-button" (click)="calculateResult()">Add</button>
-    </div>
-  </div>
-  <h1 class="text-3xl font-bold underline bg-red-300">
-    Hello world!
-  </h1>
-  
-    
   
