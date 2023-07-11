@@ -1,158 +1,77 @@
-<!--  
-
 <div class="modal">
-    <div class="modal-content">
-      <h3 class="modal-title"> show orders</h3>
-  
-      
-      
-  
-      
-  
-      <div class="container">
-        <div class="left-cat">
-            <div class="category">
-            <h5>Categories :</h5>
-            <p>T-shirt</p>
-            </div>
-            
-            <div class="category">
-                <h5>Average price :</h5>
-                <p>230,000$</p>
-                </div>
-    
-               
-                </div>
+  <div class="modal-content">
+    <h3 class="modal-title">Show Orders</h3>
+    <div class="container border-pink-500 border-2 rounded p-4 flex justify-between">
+      <div class="left-cat">
+        <div class="category">
+          <h5>Categories :</h5>
+          <p>T-shirt</p>
+        </div>
 
-
-            <div class="right-cat">
-                    <div class="category">
-                    <h5>Brands:</h5>
-                    <p>zara</p>
-                </div>
-                   
-                     <div class="category">
-                        <h5>Bulk Sale:</h5>
-                        <p>230$</p>
-                        </div>
-            
-                        
-                        </div>
-
-
-     </div>
-     <hr>
-     <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Product</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th>Discount</th>
-            <th>price</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          <ng-container *ngFor="let item of items; let i = index">
-            <tr [ngClass]="i % 2 === 0 ? 'black-row' : 'white-row'">
-              <td>{{ item.num }}</td>
-               <td>{{ item.name }}</td>
-              <td>{{ item.Image }}</td>
-              <td>{{ item.Brands }}</td>
-              <td>{{ item.Productcode}}</td>
-              <td>{{ item.categories }}</td>
-             
-              
-            </tr>
-          </ng-container>
-        </tbody>
-      </table>
-    
-      
-  
-      <div class="button-row">
-        <button >Delete</button>
-        <button > Edit</button>
-      </div>
-    </div>
-  </div>
-   -->
-   
-
-   <div class="modal">
-    <div class="modal-content">
-      <h3 class="modal-title">Show Orders</h3>
-      <div class="container">
-        <div class="left-cat">
-            <div class="category">
-            <h5>Categories :</h5>
-            <p>T-shirt</p>
-            </div>
-            
-            <div class="category">
-                <h5>Average price :</h5>
-                <p>230,000$</p>
-                </div>
-    
-               
-                </div>
-
-
-            <div class="right-cat">
-                    <div class="category">
-                    <h5>Brands:</h5>
-                    <p>zara</p>
-                </div>
-                   
-                     <div class="category">
-                        <h5>Bulk Sale:</h5>
-                        <p>230$</p>
-                        </div>
-            
-                        
-                        </div>
-
-
-     </div>
-     <hr>
-  
-      <div class="carousel-container">
-        <div class="carousel">
-          <div class="carousel-slide">
-            <table class="border-collapse">
-              <thead>
-                <tr>
-                  <th class="border p-2">#</th>
-                  <th class="border p-2">Product</th>
-                  <th class="border p-2">Qty</th>
-                  <th class="border p-2">Price</th>
-                  <th class="border p-2">Discount</th>
-                  <th class="border p-2">Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of items; let i = index" [ngClass]="i % 2 === 0 ? 'bg-gray-200' : 'bg-white'">
-                  <td class="border p-2">{{ item.num }}</td>
-                  <td class="border p-2">{{ item.name }}</td>
-                  <td class="border p-2">{{ item.Image }}</td>
-                  <td class="border p-2">{{ item.Brands }}</td>
-                  <td class="border p-2">{{ item.Productcode }}</td>
-                  <td class="border p-2">{{ item.categories }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="category">
+          <h5>Average price :</h5>
+          <p>230,000$</p>
         </div>
       </div>
-  
-      <div class="button-row mt-16 mb-0 flex items-center justify-center mr-44">
-        <button class=" btn px-7 py-1 bg-pink-200 border-pink-500 text-pink-600 " >Cancel</button> 
-        
+
+      <div class="right-cat">
+        <div class="category">
+          <h5>Brands:</h5>
+          <p>zara</p>
+        </div>
+
+        <div class="category">
+          <h5>Bulk Sale:</h5>
+          <p>230$</p>
+        </div>
       </div>
     </div>
-  </div>
-  
+    <hr>
 
- 
+    <div class="carousel-container bg-white">
+      <div class="carousel">
+        <div class="carousel-slide">
+          <table class="border-collapse w-full h-64 overflow-y-scroll ">
+            <thead>
+              <tr>
+                <th class="border p-2">#</th>
+                <th class="border p-2">Product</th>
+                <th class="border p-2">Qty</th>
+                <th class="border p-2">Price</th>
+                <th class="border p-2">Discount</th>
+                <th class="border p-2">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items; let i = index" [ngClass]="i === activeSlide ? 'bg-gray-200' : 'bg-white'">
+                <td class="border p-2">{{ item.num }}</td>
+                <td class="border p-2">{{ item.name }}</td>
+                <td class="border p-2">{{ item.Image }}</td>
+                <td class="border p-2">{{ item.Brands }}</td>
+                <td class="border p-2">{{ item.Productcode }}</td>
+                <td class="border p-2">{{ item.categories }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-row mt-0 mb-0 flex items-center justify-center mr-24">
+      <button class="btn px-7 py-1  text-gray-400" (click)="prevSlide()">
+        <span class="arrow-icon">&lt;</span>
+      </button>
+      <ng-container *ngFor="let item of items; let i = index">
+        <span
+          class="status-circle mx-2 w-3 h-3 rounded-full bg-gray-400"
+          [class.active]="i === activeSlide"
+          (click)="goToSlide(i)"
+        ></span>
+      </ng-container>
+      <button class="btn px-7 py-1  text-gray-400" (click)="nextSlide()">
+        <span class="arrow-icon">&gt;</span>
+      </button>
+    </div>
+    <button class="btn2 px-7 py-1 bg-pink-200 border-pink-500 text-pink-600 ml-56">cancel</button>
+  </div>
+</div>

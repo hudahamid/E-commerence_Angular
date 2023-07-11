@@ -122,10 +122,17 @@
 }
 
 .active {
-  background-color: green;
+  background-color: rgb(244, 33, 166);
 }
 
 .inactive {
-  background-color: red;
+  background-color: rgb(43, 23, 23);
 }
-
+.carousel-container{
+  border-color: #c26eb4;
+}
+.btn2{
+  margin-left: 40%;
+  margin-top: 5%;
+ margin: 10% 10% 0% 42%;
+}
