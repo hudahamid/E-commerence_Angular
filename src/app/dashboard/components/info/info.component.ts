@@ -15,6 +15,18 @@ export class InfoComponent implements OnInit {
     
     // Add more items as needed
   ];
+  activeSlide: number = 0;
+  prevSlide(): void {
+    this.activeSlide = (this.activeSlide - 1 + this.items.length) % this.items.length;
+  }
+
+  nextSlide(): void {
+    this.activeSlide = (this.activeSlide + 1) % this.items.length;
+  }
+
+  goToSlide(index: number): void {
+    this.activeSlide = index;
+  }
   constructor() { }
 
   ngOnInit(): void {

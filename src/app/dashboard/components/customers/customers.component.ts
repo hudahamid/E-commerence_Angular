@@ -12,7 +12,6 @@ export class CustomersComponent implements OnInit {
    cancelModal() {
     this.isModalOpen = false;
   }
-
   ngOnInit(): void {
   }
 
