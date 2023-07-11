@@ -21,6 +21,7 @@ export class ProductsComponent implements OnInit {
     { num:1,name: 'Sima Sleman', Image : '', Brands: 'zara', Productcode: '098765432',categories:'T-shirt',stack:'out of stock(0)',sale :'20.4$' },
     // Add more items as needed
   ];
+  currentSlide = 0;
   constructor() { }
 
   ngOnInit(): void {

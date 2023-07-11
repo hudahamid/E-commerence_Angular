@@ -1,53 +1,61 @@
 <button >+ Products</button>
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Brands</th>
-        <th>SProduct code</th>
-        <th>Categories</th>
-        <th>Stock Over view</th>
-        <th>SalesPrice</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let item of items; let i = index">
-        <tr [ngClass]="i % 2 === 0 ? 'black-row' : 'white-row'">
-          <td>{{ item.num }}</td>
-           <td>{{ item.name }}</td>
-          <td>{{ item.Image }}</td>
-          <td>{{ item.Brands }}</td>
-          <td>{{ item.Productcode}}</td>
-          <td>{{ item.categories }}</td>
-          <td>{{ item.stack }}</td>
-          <td>{{ item.sale }}</td>
-          
-          <td></td>
-        </tr>
-      </ng-container>
-    </tbody>
-  </table>
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="carousel-slide">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Brands</th>
+            <th>Product code</th>
+            <th>Categories</th>
+            <th>Stock Overview</th>
+            <th>Sales Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of items; let i = index">
+            <tr [ngClass]="i % 2 === 0 ? 'bg-gray-200' : 'bg-white'">
+              <td>{{ item.num }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.Image }}</td>
+              <td>{{ item.Brands }}</td>
+              <td>{{ item.Productcode }}</td>
+              <td>{{ item.categories }}</td>
+              <td>{{ item.stack }}</td>
+              <td>{{ item.sale }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="carousel-circles">
+    <div class="carousel-circle" *ngFor="let item of items; let i = index" (click)="currentSlide = i" [class.active]="currentSlide === i"></div>
+  </div>
+
+
 
   
 
 <div class="modal">
     <div class="modal-content">
-      <span class="close-icon" >&times;</span> <!-- Close icon -->
+      <span class="close-icon" >&times;</span> 
 
-    <!-- Input fields -->
+   
       <h3 class="modal-title"> product detail </h3>
   <hr>
   <p class="modal-title">Heart & Slogan Graphic Tee</p>
       <div class="img-row">
         <div class="img-col1">
-            <!-- <button class="logo">A</button> -->
+            
             <img width="150" height="174"  src="assets/productDetail.PNG" alt="My Image">
             
         </div>
         
-            <!-- <button class="logo">A</button> -->
+            
             <div class="col2">
                 <img width="55" src="assets/productDetail.PNG" alt="My Image">
                 <img width="55" src="assets/productDetail.PNG" alt="My Image">
@@ -58,11 +66,7 @@
                 <img width="55" src="assets/productDetail.PNG" alt="My Image">
                 <img width="55" src="assets/productDetail.PNG" alt="My Image">
             </div>
-            <!-- <div  class="col2">
-                <img width="55" src="assets/productDetail.PNG" alt="My Image">
-                <img width="55" src="assets/productDetail.PNG" alt="My Image">
-            </div>
-             -->
+            
             
         
       </div>
@@ -117,5 +121,5 @@
       <button class="btn px-6 py-1 bg-pink-500 text-white"  >Edit</button>
     </div>
     </div>
-  </div>
+  </div> 
   
